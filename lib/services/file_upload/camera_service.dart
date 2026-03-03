@@ -207,7 +207,7 @@ class CameraService {
 
       return File(image.path);
     } catch (e) {
-      print('Error capturing photo: $e');
+      debugPrint('Error capturing photo: $e');
       if (context.mounted) {
         AppToast.showError(
           context: context,
@@ -233,7 +233,7 @@ class CameraService {
 
       return File(image.path);
     } catch (e) {
-      print('Error picking from gallery: $e');
+      debugPrint('Error picking from gallery: $e');
       if (context.mounted) {
         AppToast.showError(
           context: context,
