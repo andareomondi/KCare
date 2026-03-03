@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:kcare/services/internet_connection/connectivity_service.dart';
 
-void main() {
+void main() async {
+  await connectivityService.initialize();
   runApp(const MyApp());
 }
 
