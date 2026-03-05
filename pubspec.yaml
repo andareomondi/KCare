@@ -41,6 +41,9 @@ dependencies:
   go_router: ^17.1.0
   dio: ^5.9.2
   web_socket_channel: ^3.0.3
+  # am adding provider and riverpod for state managment, but i will choose one of them later
+  provider: ^6.1.5
+  riverpod: ^3.2.1
 
 dev_dependencies:
   flutter_test:
