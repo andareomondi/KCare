@@ -3,7 +3,7 @@ import 'package:kcare/themes/dark_theme.dart';
 import 'package:kcare/themes/light_theme.dart';
 
 class ThemeProvider extends ChangeNotifier {
-  ThemeData _themeMode = darkTheme;
+  ThemeData _themeMode = lightTheme;
 
   ThemeData get themeMode => _themeMode;
 
@@ -20,6 +20,7 @@ class ThemeProvider extends ChangeNotifier {
     } else {
       _themeMode = lightTheme;
     }
+    debugPrint('Theme mode changed: ${isDarkTheme ? 'Dark' : 'Light'}');
     notifyListeners();
   }
 }

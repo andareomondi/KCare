@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:kcare/services/internet_connection/connectivity_service.dart';
 import 'package:kcare/services/router/router.dart';
+import 'package:kcare/themes/light_theme.dart';
 import 'package:kcare/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await connectivityService.initialize();
   runApp(
     ChangeNotifierProvider(
@@ -31,9 +33,10 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'KCare',
+      title: 'Flutter Demo',
       routerConfig: router,
-      theme: Provider.of<ThemeProvider>(context).themeMode,
+      theme: lightTheme,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

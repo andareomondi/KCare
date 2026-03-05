@@ -5,7 +5,7 @@ final GoRouter router = GoRouter(
   initialLocation: '/',
   routes: [
     GoRoute(
-      path: '/ ',
+      path: '/',
       name: 'home',
       builder: (context, state) {
         return MyHomePage(title: "Home Page");
