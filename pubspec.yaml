@@ -63,12 +63,11 @@ flutter_native_splash:
   # Set this to the exact hex code of your Lottie animation's background
   color: "#FFFFFF"
   # Set this to true to remove the default Flutter logo/app icon
-  color_dark: "#000000" # Optional: if you support dark mode
 
   # This tells Android 12+ to not show the app icon in the center
   android_12:
     color: "#FFFFFF"
-    color_dark: "#000000"
+    image: "assets/name.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
