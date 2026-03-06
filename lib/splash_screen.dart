@@ -1,18 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:kcare/screens/homepage/homePage.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-class AnimatedSplashScreenWidget extends StatelessWidget {
+class AnimatedSplashScreenWidget extends StatefulWidget {
   const AnimatedSplashScreenWidget({super.key});
 
   @override
+  State<AnimatedSplashScreenWidget> createState() =>
+      _AnimatedSplashScreenWidgetState();
+}
+
+class _AnimatedSplashScreenWidgetState
+    extends State<AnimatedSplashScreenWidget> {
+  @override
+  void initState() {
+    super.initState();
+    _initializeApp();
+  }
+
+  Future<void> _initializeApp() async {
+    FlutterNativeSplash.remove();
+    await Future.delayed(const Duration(seconds: 10));
+
+    if (mounted) {
+      context.go('/');
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return AnimatedSplashScreen(
-      splash: Center(child: Lottie.asset('assets/animation_splash.json')),
-      nextScreen: MyHomePage(title: 'K-Care Home Page'),
-      splashTransition: SplashTransition.fadeTransition,
-      splashIconSize: 600,
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: SizedBox(
+          width: 600,
+          height: 600,
+          child: Lottie.asset(
+            'assets/animation_splash.json',
+            fit: BoxFit.contain,
+          ),
+        ),
+      ),
     );
   }
 }

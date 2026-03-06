@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kcare/services/internet_connection/connectivity_service.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:kcare/services/router/router.dart';
 import 'package:kcare/themes/light_theme.dart';
 import 'package:kcare/themes/theme_provider.dart';
@@ -7,6 +8,9 @@ import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(
+    widgetsBinding: WidgetsFlutterBinding.ensureInitialized(),
+  );
   await connectivityService.initialize();
   runApp(
     ChangeNotifierProvider(

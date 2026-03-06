@@ -60,14 +60,12 @@ dev_dependencies:
   flutter_lints: ^5.0.0
 
 flutter_native_splash:
-  # Set this to the exact hex code of your Lottie animation's background
-  color: "#FFFFFF"
-  # Set this to true to remove the default Flutter logo/app icon
+  image: "assets/kcare_logo.png"
+  color: "#ffffff"
 
-  # This tells Android 12+ to not show the app icon in the center
   android_12:
-    color: "#FFFFFF"
-    image: "assets/name.png"
+    color: "#ffffff"
+    image: "assets/kcare_logo.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
