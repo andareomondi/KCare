@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:kcare/services/internet_connection/connectivity_service.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:kcare/services/router/router.dart';
-import 'package:kcare/themes/light_theme.dart';
 import 'package:kcare/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -39,7 +38,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp.router(
       title: 'Flutter Demo',
       routerConfig: router,
-      theme: lightTheme,
+      theme: Provider.of<ThemeProvider>(context).themeMode,
       debugShowCheckedModeBanner: false,
     );
   }

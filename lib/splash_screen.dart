@@ -33,13 +33,27 @@ class _AnimatedSplashScreenWidgetState
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: SizedBox(
-          width: 600,
-          height: 600,
-          child: Lottie.asset(
-            'assets/animation_splash.json',
-            fit: BoxFit.contain,
-          ),
+        child: Column(
+          children: [
+            SizedBox(
+              width: 600,
+              height: 600,
+              child: Lottie.asset(
+                'assets/animation_splash.json',
+                fit: BoxFit.contain,
+              ),
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              'Welcome to KCare',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+            const Text(
+              'Your personal health companion',
+              style: TextStyle(fontSize: 16, color: Colors.grey),
+            ),
+          ],
         ),
       ),
     );
